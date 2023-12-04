@@ -1,4 +1,4 @@
-import {readFileSync} from 'fs';
+import * as util from './util.mjs';
 
 
 const stringNumbers = [
@@ -9,11 +9,6 @@ const stringNumbers = [
 const numberMapping = Object.fromEntries(
     stringNumbers.map((number, index) => [number, index]),
 );
-
-
-function readInputFile(fileName) {
-  return readFileSync(fileName, 'utf8').split('\n');
-}
 
 function replaceFirstStringNumber(string) {
   const length = string.length;
@@ -63,13 +58,13 @@ function getFirstLastDigit(string) {
 function sumNumbers(numbers) {
   const rawFirstLast = numbers.map(getFirstLastDigit);
   const validFirstLast = rawFirstLast.filter((number) => !isNaN(number));
-  return validFirstLast.reduce((a, b) => a + b);
+  return util.sumArray(validFirstLast);
 }
 
 function main(fileName) {
-  const inputData = readInputFile(fileName);
+  const inputData = util.readInputFile(fileName);
   const replacedNumbers = replaceStringNumbers(inputData);
   return sumNumbers(replacedNumbers);
 }
 
-console.log(main('input2.txt'));
+console.log(main('data/01_2.txt'));
