@@ -67,4 +67,4 @@ function main(fileName) {
   return sumNumbers(replacedNumbers);
 }
 
-console.log(main('data/01_2.txt'));
+console.log(main('../data/01_2.txt'));
