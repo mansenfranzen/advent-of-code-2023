@@ -5,6 +5,7 @@ This repository contains solutions for the [Advent of Code 2023](https://advento
 ## Comparison to Python
 
 - Value (Python) vs reference (JS) equality tests
+- No builtin support for doc strings in JS
 - Lack of builtin functionality such as `range`, or set operations like `difference`, `intersection` in JS
 - Inheritance via classes (Python) vs prototypes (JS)
 - Seeminlgy error prone implicit type conversions in JS:
@@ -15,3 +16,4 @@ This repository contains solutions for the [Advent of Code 2023](https://advento
   ```
 - `undefined` everywhere instead raising proper exceptions in JS (e.g. access to non existing property)
 - missing type hints in JS (though available in TypeScript)
+- convenient getter syntax in JS via `get` instead of using `@property` in Python
